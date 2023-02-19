@@ -5,6 +5,9 @@
   "license": "MIT",
   "version": "v0.0.1",
   "autoload": {
+    "files": [
+      "app/Config/Functions.php"
+    ],
     "psr-4": {
       "Danidoble\\SkeletonConfig\\": "src/"
     }
