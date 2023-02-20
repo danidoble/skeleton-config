@@ -17,4 +17,5 @@ namespace Danidoble\SkeletonConfig\Config;
 class StaticVar
 {
     public static string $BASE_PATH;
+    public static string $BASE_ROUTE;
 }
