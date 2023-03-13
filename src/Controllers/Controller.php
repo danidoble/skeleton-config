@@ -28,11 +28,12 @@ class Controller
     /**
      * View of error http
      * @param int $no number of error
+     * @param array $data
      * @return Response
      */
-    public function httpError(int $no = 404): Response
+    public function httpError(int $no = 404, array $data = []): Response
     {
-        return $this->view('errors.' . $no);
+        return $this->view('errors.' . $no, [], $no);
     }
 
 }
