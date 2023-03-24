@@ -21,6 +21,7 @@ use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Engines\PhpEngine;
 use Illuminate\View\Factory;
 use Illuminate\View\FileViewFinder;
+use Illuminate\Pagination\AbstractPaginator;
 
 class Blade
 {
@@ -51,6 +52,10 @@ class Blade
 
         $dispatcher = new Dispatcher();
 
-        static::$blade = new Factory($resolver, $viewFinder, $dispatcher);
+        $viewFactory = new Factory($resolver, $viewFinder, $dispatcher);
+        AbstractPaginator::viewFactoryResolver(function () use ($viewFactory) {
+            return $viewFactory;
+        });
+        static::$blade = $viewFactory;
     }
 }
