@@ -32,9 +32,10 @@ class Blade
 
     /**
      * @param $dir
+     * @param string|null $default_pagination
      * @return void
      */
-    public static function makeFactory($dir): void
+    public static function makeFactory($dir,?string $default_pagination = null): void
     {
         $filesystem = new Filesystem();
 
@@ -56,6 +57,9 @@ class Blade
         AbstractPaginator::viewFactoryResolver(function () use ($viewFactory) {
             return $viewFactory;
         });
+        if (!blank($default_pagination)) {
+            AbstractPaginator::defaultView($default_pagination);
+        }
         static::$blade = $viewFactory;
     }
 }
