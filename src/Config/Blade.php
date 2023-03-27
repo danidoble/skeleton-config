@@ -113,6 +113,6 @@ class Blade
         }
 
         // return Router::$request->getBasePath() . Router::$request->getPathInfo() . $urlGenerator->getContext()->getQueryString();
-        return $urlGenerator->generate('test', $arr); // Generamos la URL y la regresamos
+        return $urlGenerator->generate(Router::currentRouteName(), $arr); // Generamos la URL y la regresamos
     }
 }
