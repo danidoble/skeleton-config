@@ -9,9 +9,11 @@
       "src/Config/Functions.php"
     ],
     "psr-4": {
-      "Danidoble\\SkeletonConfig\\": "src/",
-      "Danidoble\\SkeletonConfig\\Test\\": "test/"
-    }
+      "Danidoble\\SkeletonConfig\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "**/test/"
+    ]
   },
   "authors": [
     {
