@@ -1,0 +1,1 @@
+Error 403<?php /**PATH /home/dani/www/html/d/skeleton-config/test/resources/views/errors/403.blade.php ENDPATH**/ ?>

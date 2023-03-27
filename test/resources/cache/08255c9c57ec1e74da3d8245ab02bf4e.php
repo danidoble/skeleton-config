@@ -1,0 +1,1 @@
+Error supremo<?php /**PATH /home/dani/www/html/d/skeleton-config/test/resources/views/errors/500.blade.php ENDPATH**/ ?>

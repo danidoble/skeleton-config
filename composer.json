@@ -9,7 +9,8 @@
       "src/Config/Functions.php"
     ],
     "psr-4": {
-      "Danidoble\\SkeletonConfig\\": "src/"
+      "Danidoble\\SkeletonConfig\\": "src/",
+      "Danidoble\\SkeletonConfig\\Test\\": "test/"
     }
   },
   "authors": [
