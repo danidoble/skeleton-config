@@ -5,8 +5,10 @@
  * @website https://danidoble.com
  */
 
+use Danidoble\SkeletonConfig\Component;
 use Danidoble\SkeletonConfig\Config\Blade;
 use Danidoble\SkeletonConfig\Config\StaticVar;
+use Danidoble\SkeletonConfig\View;
 use Spatie\Ignition\Ignition;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -20,8 +22,23 @@ if (!function_exists('view')) {
      */
     function view(string $view, array $data = [], int $status = 200, array $mergeData = []): Response
     {
-        $data = array_merge($data, $mergeData);
-        return new Response(Blade::$blade->make($view)->with($data)->render(), $status);
+        return (new View($view, $data, $status, $mergeData))->toResponse();
+    }
+}
+
+if (!function_exists('component')) {
+    /**
+     * @param string $view - the name of view to render
+     * @param array $data - array of data to send to view
+     * @param string $dir - the name of the directory to look for the component
+     * @return string
+     */
+    function component(string $view, array $data = [], string $dir = 'components'): string
+    {
+        $component = new Component($view);
+        $component->set('data', $data);
+        $component->setDir($dir);
+        return $component->render();
     }
 }
 
